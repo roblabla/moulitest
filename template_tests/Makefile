@@ -6,7 +6,7 @@
 #    By: yyang <yyang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/18 09:55:13 by yyang             #+#    #+#              #
-#    Updated: 2015/02/07 20:08:53 by yyang            ###   ########.fr        #
+#    Updated: 2015/02/07 20:12:12 by yyang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
                                                        #
@@ -53,7 +53,7 @@ CC_LIBFT_LIB_DEFAULT = -L $(LIBFT_PATH) -lft
 CC_FRAMEWORK_LIB = -L $(FRAMEWORK_PATH) -lmt_framework
 CC_INCLUDES = -I . -I $(FRAMEWORK_PATH)/includes
 TEST_FILES = $(shell find tests -name "*.spec.c" -type f -follow -print | grep -e $(PATTERN) | grep -e $(POST_PATTERN))
-CC_SOURCE = $(TEST_FILES) main.c utils.c $(CC_SOURCE_EXTRA)
+CC_SOURCE = $(TEST_FILES) main.c $(CC_SOURCE_EXTRA)
 ADD_TESTS = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_SUITE\(mt, \1, suite_\1); /g")
 PROTOTYPES = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_PROTO\(\1\); /g")
 CC_DEFINES = -DPROTOTYPES="$(PROTOTYPES)" -DADD_TESTS="$(ADD_TESTS)"
