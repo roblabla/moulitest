@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/07 20:38:57 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/07 20:51:12 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/07 21:37:53 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 #define MYHEADER_H
 
 int ft_iseven(int nb);
+int ft_isodd(int nb);
 
 #endif

@@ -18,7 +18,7 @@ if __name__ == "__main__":
 	headers_dir = config.get('General', 'headers')
 	sources = config.get('General', 'sources')
 
-	cmd = "make -C '{mt_dir}/src' MT_RENDU_PATH='{project_dir}' MT_HEADERS_PATH='{headers_dir}' MT_SOURCES={sources}".format(
+	cmd = "make -C '{mt_dir}/src' MT_RENDU_PATH='{project_dir}' MT_HEADERS='{headers_dir}' MT_SOURCES='{sources}'".format(
 		mt_dir= get_mt_dir(),
 		project_dir = get_project_dir(),
 		headers_dir = headers_dir,
