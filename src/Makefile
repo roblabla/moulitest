@@ -16,8 +16,7 @@
 # REQUIRED CONFIGS
 #===============================================================================
 
-NAME = "abc"
-RENDU_PATH_KEY = "abc"
+NAME = test.out
 
 #===============================================================================
 # DEFAULTS
@@ -28,7 +27,6 @@ CC_FLAGS = -Werror -Wextra -Wall
 
 FRAMEWORK_PATH = v3/
 RENDU_MAKE_ARG = re
-CONFIG_INI_PATH = ../config.ini
 PATTERN ?= spec.c$$
 define FIRST_RULE
 	make exec_tests
@@ -46,25 +44,25 @@ all:
 #===============================================================================
 # COMMON
 #===============================================================================
-TESTS_PATH = $(RENDU_PATH)/tests
+TESTS_PATH = $(MT_RENDU_PATH)/tests
 CC_LIBFT_LIB_DEFAULT = -L $(LIBFT_PATH) -lft
 CC_FRAMEWORK_LIB = -L$(FRAMEWORK_PATH) -lmt_framework
-CC_INCLUDES = -I . -I $(FRAMEWORK_PATH)/includes -I $(RENDU_PATH) -I $(RENDU_PATH)/includes -I $(RENDU_PATH)/libft/includes
+CC_INCLUDES = -I . -I $(FRAMEWORK_PATH)/includes -I $(MT_RENDU_PATH)/$(MT_HEADERS_PATH)
 TEST_FILES = $(shell find $(TESTS_PATH) -name "*.spec.c" -type f -follow -print | grep -e $(PATTERN) | grep -e $(POST_PATTERN))
-CC_SOURCE = $(TEST_FILES) $(RENDU_PATH)/main.c $(CC_SOURCE_EXTRA)
-LIBFT_PATH = $(RENDU_PATH)/libft
+CC_SOURCE = $(TEST_FILES) main.c $(MT_RENDU_PATH)/$(MT_SOURCES)
+LIBFT_PATH = $(MT_RENDU_PATH)/libft
 ADD_TESTS = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_SUITE\(mt, \1, suite_\1); /g")
 PROTOTYPES = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_PROTO\(\1\); /g")
-CC_DEFINES = -DPROTOTYPES="$(PROTOTYPES)" -DADD_TESTS="$(ADD_TESTS)" -DRENDU_PATH="\"$(RENDU_PATH)\""
+CC_DEFINES = -DPROTOTYPES="$(PROTOTYPES)" -DADD_TESTS="$(ADD_TESTS)" -DRENDU_PATH="\"$(MT_RENDU_PATH)\""
 
 exec_tests:
 	echo "$(TEST_FILES)"
-ifneq ("$(wildcard $(RENDU_PATH)/libft/Makefile)","")
+ifneq ("$(wildcard $(MT_RENDU_PATH)/libft/Makefile)","")
 	make $(RENDU_MAKE_ARG) -k -C $(LIBFT_PATH)
 	$(eval CC_LIBFT_LIB = $(CC_LIBFT_LIB_DEFAULT))
 endif
-ifneq ("$(wildcard $(RENDU_PATH)/Makefile)","")
-	make $(RENDU_MAKE_ARG) -k -C $(RENDU_PATH) $(CC_LIBFT_LIB)
+ifneq ("$(wildcard $(MT_RENDU_PATH)/Makefile)","")
+	make $(RENDU_MAKE_ARG) -k -C $(MT_RENDU_PATH) $(CC_LIBFT_LIB)
 endif
 	make -k -C $(FRAMEWORK_PATH)
 	gcc $(CC_FLAGS) $(CC_DEBUG) $(CC_INCLUDES) $(CC_DEFINES) $(CC_SOURCE) -o $(NAME) $(CC_FRAMEWORK_LIB) $(CC_LIBS)
@@ -74,7 +72,7 @@ clean:
 	rm -f $(OBJECTS)
 
 fclean: clean
-	make -k -C $(RENDU_PATH) fclean
+	make -k -C $(MT_RENDU_PATH) fclean
 	make -k -C $(FRAMEWORK_PATH) fclean
 	rm -f $(NAME)
 
