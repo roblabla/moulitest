@@ -1,8 +1,6 @@
 #! /usr/bin/python
-import ConfigParser
-# stream = open("example.yaml", 'r')
-# print yaml.load(stream)
 
+import ConfigParser
 import os
 
 def get_mt_dir():
@@ -10,7 +8,6 @@ def get_mt_dir():
 
 def get_project_dir():
 	return os.getcwd()
-
 
 if __name__ == "__main__":
 	config = ConfigParser.ConfigParser()
@@ -25,5 +22,3 @@ if __name__ == "__main__":
 		sources = sources,
 	)
 	os.system(cmd)
-
-	# config.read(['site.cfg', os.path.expanduser('~/.myapp.cfg')])
