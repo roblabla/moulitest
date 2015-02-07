@@ -11,7 +11,7 @@ static void success_test(t_test *test)
 }
 
 
-void	suite_00_no_conv(t_suite *suite)
+void	suite_iseven(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, failing_test);
 	SUITE_ADD_TEST(suite, success_test);

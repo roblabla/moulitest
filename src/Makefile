@@ -16,8 +16,8 @@
 # REQUIRED CONFIGS
 #===============================================================================
 
-# NAME =
-# RENDU_PATH_KEY =
+NAME = "abc"
+RENDU_PATH_KEY = "abc"
 
 #===============================================================================
 # DEFAULTS
@@ -26,17 +26,13 @@ POST_PATTERN = ""
 CC_DEBUG = -g
 CC_FLAGS = -Werror -Wextra -Wall
 
-FRAMEWORK_PATH = ../testframework/v3/
+FRAMEWORK_PATH = v3/
 RENDU_MAKE_ARG = re
 CONFIG_INI_PATH = ../config.ini
 PATTERN ?= spec.c$$
 define FIRST_RULE
 	make exec_tests
 endef
-
-ifeq ("$(RENDU_PATH)", "")
-RENDU_PATH ?= $(shell grep $(RENDU_PATH_KEY) $(CONFIG_INI_PATH) | cut -d '=' -f 2 | sed -E "s/^[ \"]*//" | sed -E "s/[ \"]*$$//")
-endif
 
 all:
 	$(FIRST_RULE)
@@ -45,17 +41,17 @@ all:
 # INCLUDES
 #===============================================================================
 
-include Makefile_cfg.mk
+# include Makefile_cfg.mk
 
 #===============================================================================
 # COMMON
 #===============================================================================
-TESTS_PATH = tests
+TESTS_PATH = $(RENDU_PATH)/tests
 CC_LIBFT_LIB_DEFAULT = -L $(LIBFT_PATH) -lft
 CC_FRAMEWORK_LIB = -L$(FRAMEWORK_PATH) -lmt_framework
 CC_INCLUDES = -I . -I $(FRAMEWORK_PATH)/includes -I $(RENDU_PATH) -I $(RENDU_PATH)/includes -I $(RENDU_PATH)/libft/includes
-TEST_FILES = $(shell find tests -name "*.spec.c" -type f -follow -print | grep -e $(PATTERN) | grep -e $(POST_PATTERN))
-CC_SOURCE = $(TEST_FILES) main.c utils.c $(CC_SOURCE_EXTRA)
+TEST_FILES = $(shell find $(TESTS_PATH) -name "*.spec.c" -type f -follow -print | grep -e $(PATTERN) | grep -e $(POST_PATTERN))
+CC_SOURCE = $(TEST_FILES) $(RENDU_PATH)/main.c $(CC_SOURCE_EXTRA)
 LIBFT_PATH = $(RENDU_PATH)/libft
 ADD_TESTS = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_SUITE\(mt, \1, suite_\1); /g")
 PROTOTYPES = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_PROTO\(\1\); /g")
