@@ -2,7 +2,6 @@
 #include <fw.h>
 #include <mt.h>
 #include <test.h>
-#include <project.h>
 
 PROTOTYPES
 
