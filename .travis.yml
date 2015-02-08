@@ -1,0 +1,6 @@
+os:
+  - osx
+language: c
+compiler: gcc
+script:
+  - cd examples/simple_project && ../../src/moulitest
