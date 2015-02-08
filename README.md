@@ -28,14 +28,14 @@ headers:
 
 size_t ft_strlen(char *s); // ou inclure le .h
 
-void test_00(t_test *test)
+void simpleString_returnLength(t_test *test)
 {
-	mt_assert(ft_strlen("coucou") == strlen("coucou"));
+	mt_assert(ft_strlen("le tdd c'est cool") == 17);
 }
 
 void	suite_ft_strlen(t_suite *suite)
 {
-	SUITE_ADD_TEST(suite, test_00);
+	SUITE_ADD_TEST(suite, simpleString_returnLength);
 }
 ```
 
