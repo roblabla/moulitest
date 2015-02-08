@@ -1,10 +1,13 @@
-class Moulitest < Formula
-  homepage 'http://hmmer.janelia.org/'
-  url 'http://selab.janelia.org/software/hmmer3/3.1b1/hmmer-3.1b1.tar.gz'
+require 'formula'
 
-  def install
-    system "./configure", "--prefix=#{prefix}"
-    system "make"
-    system "make install"
-  end
+class Moulitest < Formula
+	homepage "https://www.gnu.org/software/wget/"
+	url "https://github.com/yyang42/moulitest/archive/v4.zip"
+	sha1 ""
+	version "0.4.1"
+
+	def install
+		bin.install "moulitest"
+		(prefix).install "src"
+	end
 end
