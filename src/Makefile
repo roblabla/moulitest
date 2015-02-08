@@ -6,7 +6,7 @@
 #    By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/18 09:55:13 by yyang             #+#    #+#              #
-#    Updated: 2015/02/08 15:57:16 by juschaef         ###   ########.fr        #
+#    Updated: 2015/02/08 16:12:10 by juschaef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
                                                        #
@@ -40,7 +40,7 @@ MT_HEADERS_PREFIXED = $(addprefix -I $(MT_RENDU_PATH)/, $(MT_HEADERS))
 TESTS_PATH = $(MT_RENDU_PATH)
 CC_FRAMEWORK_LIB = -L $(FRAMEWORK_PATH) -lmt_framework
 CC_INCLUDES = -I . -I $(FRAMEWORK_PATH)/includes $(MT_HEADERS_PREFIXED)
-TEST_FILES = $(shell find $(TESTS_PATH) -name "*.spec.c" -type f -follow -print | grep -e $(PATTERN) | grep -v $(POST_PATTERN))
+TEST_FILES = $(shell find $(TESTS_PATH) -name "*.spec.c" -type f -follow -print | grep -e $(PATTERN) | grep -e $(POST_PATTERN))
 
 CC_SOURCE = $(TEST_FILES) main.c $(MT_SOURCES_PREFIXED)
 ADD_TESTS = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_SUITE\(mt, \1, suite_\1); /g")
