@@ -2,8 +2,7 @@ os:
   - osx
 language: c
 compiler: gcc
-env:
-  - PROJECT=simple_project
-  - PROJECT=full_project
+
 script:
-  - output=$(cd examples/$PROJECT && ../../src/moulitest) ; echo "$output" ; echo "$output" | grep "END OF TESTS"
+  - output=$(cd examples/simple_project && ../../src/moulitest) ; echo "$output\n" ; echo "$output" | grep "END OF TESTS"
+  - output=$(cd examples/full_project && make -C libft && ../../src/moulitest) ; echo "$output\n" ; echo "$output" | grep "END OF TESTS"
