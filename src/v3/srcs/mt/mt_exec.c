@@ -10,7 +10,7 @@ static void		mt_exec_suites(t_mt *mt)
 static void		mt_print_header(t_mt *mt)
 {
 	printf("\n--\n\n");
-	printf(C_CYAN">>>> Tests for %s"C_CLEAR"\n", mt->name);
+	// printf(C_CYAN">>>> Tests for %s"C_CLEAR"\n", mt->name);
 	// printf("=== Tests for %s ===\n", mt->name);
 	// printf("Test: %s\n", mt->name);
 	printf("Source: github.com/yyang42/moulitest\n");
@@ -24,7 +24,7 @@ static void		mt_print_header(t_mt *mt)
 	puts("\n");
 	if (mt->desc)
 		printf("Notes: %s\n\n", mt->desc);
-	printf("[ "C_CYAN"-------STARTING ALL UNIT TESTS-------"C_CLEAR" ]");
+	printf("[ "C_CYAN"------------ START TESTS ------------"C_CLEAR" ]");
 	puts("");
 	(void)mt;
 }
@@ -50,7 +50,7 @@ static void		mt_print_result(t_mt *mt)
 
 static void		mt_print_footer(t_mt *mt)
 {
-	puts("[ "C_CYAN"----------END OF UNIT TESTS----------"C_CLEAR" ]");
+	puts("[ "C_CYAN"----------- END OF TESTS ------------"C_CLEAR" ]");
 	puts("");
 	mt_print_result(mt);
 	puts("");
