@@ -12,7 +12,7 @@ Ceci va installer le programme moulitest sur votre machine.
 
 ## Quick Start
 
-**1) Creer un fichier moulitest.cfg (dans votre dossier de projet)**
+**1) Créez un fichier moulitest.cfg (dans votre dossier de projet)**
 ```ini
 [General]
 sources: ft_strlen.c
@@ -22,13 +22,13 @@ headers:
 
 **headers**: indiquez ici les dossiers contenant vos headers, e.g. /path/includes /libpath/includes
 
-**2) Creer un fichier ft_strlen.spec.c**
+**2) Créez un fichier ft_strlen.spec.c**
 ```c
 #include <moulitest.h>
 
 size_t ft_strlen(char *s); // ou inclure le .h
 
-void simpleString_returnLength(t_test *test)
+static void simpleString_returnLength(t_test *test)
 {
 	mt_assert(ft_strlen("le tdd c'est cool") == 17);
 }
@@ -38,8 +38,9 @@ void	suite_ft_strlen(t_suite *suite)
 	SUITE_ADD_TEST(suite, simpleString_returnLength);
 }
 ```
+**convention**: le nom de la suite est basé sur celui du fichier (suite_NOM_DU_FICHIER). Si le fichier tests se nomme ```ft_strlen.spec.c```, le proto de la fonction de la suite sera ```void suite_ft_strlen(t_suite *suite)```
 
-**3) Creer votre fichier ft_strlen.c**
+**3) Créez votre fichier ft_strlen.c**
 ```
 /!\ vous croyez quand meme pas que je vais vous donner mon code /!\
 ```
