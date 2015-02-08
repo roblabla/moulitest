@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yyang <yyang@student.42.fr>                +#+  +:+       +#+         #
+#    By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/18 09:55:13 by yyang             #+#    #+#              #
-#    Updated: 2015/01/25 18:15:17 by yyang            ###   ########.fr        #
+#    Updated: 2015/02/08 14:15:50 by juschaef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
                                                        #
@@ -37,7 +37,7 @@ all:
 MT_SOURCES_PREFIXED = $(addprefix $(MT_RENDU_PATH)/, $(MT_SOURCES))
 MT_HEADERS_PREFIXED = $(addprefix -I $(MT_RENDU_PATH)/, $(MT_HEADERS))
 
-TESTS_PATH = $(MT_RENDU_PATH)/tests
+TESTS_PATH = $(MT_RENDU_PATH)
 CC_LIBFT_LIB_DEFAULT = -L $(LIBFT_PATH) -lft
 CC_FRAMEWORK_LIB = -L$(FRAMEWORK_PATH) -lmt_framework
 CC_INCLUDES = -I . -I $(FRAMEWORK_PATH)/includes $(MT_HEADERS_PREFIXED)
