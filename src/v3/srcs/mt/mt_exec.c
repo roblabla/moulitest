@@ -21,6 +21,7 @@ static void		mt_print_header(t_mt *mt)
 	printf(" / ("C_RED"B"C_CLEAR") Bus error");
 	printf(" / ("C_RED"T"C_CLEAR") Timeout");
 	printf(" / ("C_RED"A"C_CLEAR") Abort");
+	printf(" / (🍺 ) Beer time");
 	puts("\n");
 	if (mt->desc)
 		printf("Notes: %s\n\n", mt->desc);
