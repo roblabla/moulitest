@@ -4,3 +4,4 @@ language: c
 compiler: gcc
 script:
   - cd examples/simple_project && ../../src/moulitest
+  - cd examples/full_project && ../../src/moulitest
