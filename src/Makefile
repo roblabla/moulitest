@@ -6,7 +6,7 @@
 #    By: yyang <yyang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/18 09:55:13 by yyang             #+#    #+#              #
-#    Updated: 2015/02/08 17:26:42 by yyang            ###   ########.fr        #
+#    Updated: 2015/02/08 18:01:02 by yyang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ POST_PATTERN = ""
 CC_DEBUG = -g
 CC_FLAGS = -Werror -Wextra -Wall
 
-FRAMEWORK_PATH = v3/
+FRAMEWORK_PATH = framework/
 PATTERN ?= spec.c$$
 define FIRST_RULE
 	make exec_tests
