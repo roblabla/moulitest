@@ -4,4 +4,4 @@ language: c
 compiler: gcc
 script:
   - echo $(cd examples/simple_project && ../../src/moulitest) | grep "END OF TESTS"
-  - echo $(cd examples/full_project && ../../src/moulitest) | grep "END OF TESTS"
+  - echo $(cd examples/full_project && make -C libft && ../../src/moulitest) | grep "END OF TESTS"
