@@ -8,7 +8,10 @@
 $ brew install https://raw.githubusercontent.com/yyang42/moulitest/fw/moulitest.rb
 ```
 
-Ceci va installer le programme moulitest sur votre machine.
+- Ceci va installer le programme moulitest sur votre machine.
+- Ignorez ce message: "Warning: Cannot verify integrity ..."
+- Si besoin, utilisez ```brew reinstall``` pour ... reinstaller
+
 
 ## Quick Start
 
@@ -18,9 +21,9 @@ Ceci va installer le programme moulitest sur votre machine.
 sources: ft_strlen.c
 headers:
 ```
-**source**: vous pouvez utiliser des wildcards pour inclure des sources (e.g. srcs/*.c mais attention a ne pas inclure les .spec.c (voir plus bas)
 
-**headers**: indiquez ici les dossiers contenant vos headers, e.g. /path/includes /libpath/includes
+- **sources**: vous pouvez utiliser des wildcards pour inclure des sources (e.g. srcs/*.c mais attention a ne pas inclure les .spec.c (voir plus bas)
+- **headers**: indiquez ici les dossiers contenant vos headers, e.g. /path/includes /libpath/includes
 
 **2) Créez un fichier ft_strlen.spec.c**
 ```c
@@ -38,7 +41,8 @@ void	suite_ft_strlen(t_suite *suite)
 	SUITE_ADD_TEST(suite, simpleString_returnLength);
 }
 ```
-**convention**: le nom de la suite est basé sur celui du fichier (suite_NOM_DU_FICHIER). Si le fichier tests se nomme ```ft_strlen.spec.c```, le proto de la fonction de la suite sera ```void suite_ft_strlen(t_suite *suite)```
+
+- **convention**: le nom de la suite est basé sur celui du fichier (suite_NOM_DU_FICHIER). Si le fichier tests se nomme ```ft_strlen.spec.c```, le proto de la fonction de la suite sera ```void suite_ft_strlen(t_suite *suite)```
 
 **3) Créez votre fichier ft_strlen.c**
 ```
