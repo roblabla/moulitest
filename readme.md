@@ -13,9 +13,12 @@ Ceci va installer le programme moulitest sur votre machine.
 **1) Creer un fichier moulitest.cfg (dans votre dossier de projet)**
 ```ini
 [General]
-sources: ft_strlen.c	# les wildcards marchent e.g. srcs/*.c
-headers: 				# peut être vide
+sources: ft_strlen.c
+headers:
 ```
+**source**: vous pouvez utiliser des wildcards pour inclure des sources (e.g. srcs/*.c mais attention a ne pas inclure les .spec.c (voir plus bas)
+
+**headers**: indiquez ici les dossiers contenant vos headers, e.g. /path/includes /libpath/includes
 
 **2) Creer un fichier ft_strlen.spec.c**
 ```c
@@ -23,14 +26,14 @@ headers: 				# peut être vide
 
 size_t ft_strlen(char *s); // ou inclure le .h
 
-void test_coucou(t_test *test)
+void test_00(t_test *test)
 {
-	mt_assert(strcmp(coucou(), "coucou") == 0);
+	mt_assert(ft_strlen("coucou") == strlen("coucou"));
 }
 
-void	suite_coucou(t_suite *suite)
+void	suite_ft_strlen(t_suite *suite)
 {
-	SUITE_ADD_TEST(suite, test_coucou);
+	SUITE_ADD_TEST(suite, test_00);
 }
 ```
 
