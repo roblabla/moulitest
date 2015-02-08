@@ -4,7 +4,7 @@ SRCS = srcs/**/*.c
 FLAGS = -Wall -Werror -Wextra -ggdb
 
 all:
-	gccx $(FLAGS) $(INCLUDES) -c $(SRCS)
+	gcc $(FLAGS) $(INCLUDES) -c $(SRCS)
 	ar rc $(NAME) *.o
 
 clean:
