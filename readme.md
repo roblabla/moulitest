@@ -1,22 +1,24 @@
-# Install
+# Moulitest test framework
 
-```
+## Install
+
+```shell
 $ brew install https://raw.githubusercontent.com/yyang42/moulitest/fw/moulitest.rb
 ```
 
 Ceci va installer le programme moulitest sur votre machine.
 
-# Quick Start
+## Quick Start
 
-##creer un fichier moulitest.cfg (dans votre dossier de projet)
-```
+**1) Creer un fichier moulitest.cfg (dans votre dossier de projet)**
+```ini
 [General]
 sources: ft_strlen.c	# les wildcards marchent e.g. srcs/*.c
 headers: 				# peut être vide
 ```
 
-##creer un fichier ft_strlen.spec.c
-```
+**2) Creer un fichier ft_strlen.spec.c**
+```c
 #include <moulitest.h>
 
 size_t ft_strlen(char *s); // ou inclure le .h
@@ -32,17 +34,18 @@ void	suite_coucou(t_suite *suite)
 }
 ```
 
-##creer votre fichier ft_strlen.c
+**3) Creer votre fichier ft_strlen.c**
 ```
 /!\ vous croyez quand meme pas que je vais vous donner mon code /!\
 ```
 
-##entrer la commande dans le dossier de votre projet
-```
+**4) Entrer la commande dans le dossier de votre projet**
+
+```shell
 $ moulitest
 ```
 
-##votre dossier doit ressembler à ca
+**Votre dossier doit ressembler à ça**
 ```
 dossier_project/
 	- ft_strlen.c
