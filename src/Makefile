@@ -6,7 +6,7 @@
 #    By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/18 09:55:13 by yyang             #+#    #+#              #
-#    Updated: 2015/02/08 14:27:31 by juschaef         ###   ########.fr        #
+#    Updated: 2015/02/08 15:20:18 by juschaef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
                                                        #
@@ -38,13 +38,11 @@ MT_SOURCES_PREFIXED = $(addprefix $(MT_RENDU_PATH)/, $(MT_SOURCES))
 MT_HEADERS_PREFIXED = $(addprefix -I $(MT_RENDU_PATH)/, $(MT_HEADERS))
 
 TESTS_PATH = $(MT_RENDU_PATH)
-CC_LIBFT_LIB_DEFAULT = -L $(LIBFT_PATH) -lft
-CC_FRAMEWORK_LIB = -L$(FRAMEWORK_PATH) -lmt_framework
+CC_FRAMEWORK_LIB = -L $(FRAMEWORK_PATH) -lmt_framework
 CC_INCLUDES = -I . -I $(FRAMEWORK_PATH)/includes $(MT_HEADERS_PREFIXED)
 TEST_FILES = $(shell find $(TESTS_PATH) -name "*.spec.c" -type f -follow -print | grep -e $(PATTERN) | grep -e $(POST_PATTERN))
 
 CC_SOURCE = $(TEST_FILES) main.c $(MT_SOURCES_PREFIXED)
-LIBFT_PATH = $(MT_RENDU_PATH)/libft
 ADD_TESTS = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_SUITE\(mt, \1, suite_\1); /g")
 PROTOTYPES = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_PROTO\(\1\); /g")
 CC_DEFINES = -DPROTOTYPES="$(PROTOTYPES)" -DADD_TESTS="$(ADD_TESTS)" -DRENDU_PATH="\"$(MT_RENDU_PATH)\""
