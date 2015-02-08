@@ -6,7 +6,7 @@
 #    By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/18 09:55:13 by yyang             #+#    #+#              #
-#    Updated: 2015/02/08 14:15:50 by juschaef         ###   ########.fr        #
+#    Updated: 2015/02/08 14:27:31 by juschaef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
                                                        #
@@ -50,7 +50,6 @@ PROTOTYPES = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/
 CC_DEFINES = -DPROTOTYPES="$(PROTOTYPES)" -DADD_TESTS="$(ADD_TESTS)" -DRENDU_PATH="\"$(MT_RENDU_PATH)\""
 
 exec_tests:
-	echo "$(MT_HEADERS_PREFIXED)"
 	make -k -C $(FRAMEWORK_PATH)
 	gcc $(CC_FLAGS) $(CC_DEBUG) $(CC_INCLUDES) $(CC_DEFINES) $(CC_SOURCE) -o $(NAME) $(CC_FRAMEWORK_LIB) $(CC_LIBS)
 	./$(NAME)
