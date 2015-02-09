@@ -65,4 +65,29 @@ dossier_project/
 
 ## Consignes pour l'atelier TDD du mardi 10 fév
 
-...
+Codez une calculatrice qui prendra en argument une string et qui imprimera le resultat.
+Evidement vous testerez toutes vos fonctions avec la methodologie TDD et le framework présentez ci-dessus.
+```
+$ ./ft_calc "6 * 7"  
+-> 42
+```
+
+De préférence, trouvez un binôme et codez à deux sur un même poste.
+
+**Niveau 1:**
+- gerer les operateurs simple (+, -, *, /, %)  
+
+**Niveau 2:**
+- gerer les parentheses et la precedence des operateurs 
+```
+$ ./ft_calc "6 * (6 + 1)"
+-> 42
+```
+**Niveau 3:**
+- gerer les nombres de taille potentiellement infini (infinit_mult de l'exam mais en mieux !)
+```
+$./ft_calc "42424242424242424242424242424242 * (424242424242424242424242424242 + 424242424242424242424242)"
+-> 17998181450872359963269054178108910927276400367309458218549128
+```
+
+Bisous
