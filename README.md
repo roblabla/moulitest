@@ -17,7 +17,7 @@ $ brew install https://raw.githubusercontent.com/yyang42/moulitest/fw/moulitest.
 
 **1) Créez un fichier moulitest.cfg (dans votre dossier de projet)**
 ```ini
-[General]
+[general]
 sources: ft_strlen.c
 headers:
 ```
