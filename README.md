@@ -28,7 +28,7 @@ sources: ft_strlen.c
 headers:
 ```
 
-- **sources**: vous pouvez utiliser des wildcards pour inclure des sources (e.g. srcs/*.c mais attention à ne pas inclure les .spec.c (voir plus bas)
+- **sources**: vous pouvez utiliser des wildcards pour inclure des sources (e.g. srcs/*.c mais attention à ne pas inclure les .spec.c (voir plus bas). Attention à ne pas inclure de fonction main.
 - **headers**: indiquez ici les dossiers contenant vos headers, e.g. /path/includes /libpath/includes
 
 **2) Créez un fichier ft_strlen.spec.c**
