@@ -3,5 +3,5 @@
 int		calc(char *str)
 {
 	(void)str;
-	return (42);
+	return (44);
 }
