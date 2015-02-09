@@ -21,7 +21,7 @@ $ brew install https://raw.githubusercontent.com/yyang42/moulitest/fw/moulitest.
 
 ## Quick Start
 
-**1) Créez un fichier moulitest.cfg (dans votre dossier de projet)**
+**1) Créez un fichier .moulitest.cfg (dans votre dossier de projet)**
 ```ini
 [general]
 sources: ft_strlen.c
@@ -66,7 +66,7 @@ $ moulitest
 dossier_project/
 	- ft_strlen.c
 	- ft_strlen.spec.c
-	- moulitest.cfg
+	- .moulitest.cfg
 ```
 
 <a id="atelier-tdd"></a>

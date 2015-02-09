@@ -4,7 +4,7 @@ class Moulitest < Formula
 	homepage "https://www.gnu.org/software/wget/"
 	url "https://github.com/yyang42/moulitest/archive/fw.zip"
 	sha1 ""
-	version "0.4.15"
+	version "0.4.16"
 
 	def install
 		bin.install "src/moulitest"

@@ -11,7 +11,7 @@ def get_project_dir():
 
 if __name__ == "__main__":
 	config = ConfigParser.ConfigParser()
-	config.readfp(open("%s/moulitest.cfg"%get_project_dir()))
+	config.readfp(open("%s/.moulitest.cfg"%get_project_dir()))
 	headers_dir = config.get('general', 'headers')
 	sources = config.get('general', 'sources')
 
