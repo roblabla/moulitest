@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/07 21:56:31 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/07 21:57:32 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/09 23:00:19 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,14 @@ size_t	ft_strlen(const char *s)
 		l++;
 	return (l);
 }
+
+
+#ifndef __MOULITEST__
+#include <stdio.h>
+
+int main(void)
+{
+	printf("%s\n", "coucou");
+	return (0);
+}
+#endif
