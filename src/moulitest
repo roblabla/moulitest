@@ -14,11 +14,13 @@ if __name__ == "__main__":
 	config.readfp(open("%s/.moulitest.cfg"%get_project_dir()))
 	headers_dir = config.get('general', 'headers')
 	sources = config.get('general', 'sources')
+	tests = config.get('general', 'tests')
 
-	cmd = "make -C '{mt_dir}/../src' MT_RENDU_PATH='{project_dir}' MT_HEADERS='{headers_dir}' MT_SOURCES='{sources}'".format(
+	cmd = "make -C '{mt_dir}/../src' MT_RENDU_PATH='{project_dir}' MT_HEADERS='{headers_dir}' MT_SOURCES='{sources}' MT_TESTS_GREP_PATTERN='{tests}'".format(
 		mt_dir= get_mt_dir(),
 		project_dir = get_project_dir(),
 		headers_dir = headers_dir,
 		sources = sources,
+		tests = tests,
 	)
 	os.system(cmd)
