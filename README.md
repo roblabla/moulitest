@@ -4,7 +4,7 @@
 
 ## Sommaire
 
-- [Documentation moulitest](#user-content-moulitest-doc)
+- [Documentation du moulitest](#user-content-moulitest-doc)
 - [Consignes pour l'atelier TDD du mardi 10 fév](#user-content-atelier-tdd)
 
 <a id="moulitest-doc"></a>
