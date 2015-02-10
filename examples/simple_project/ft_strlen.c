@@ -21,14 +21,3 @@ size_t	ft_strlen(const char *s)
 		l++;
 	return (l);
 }
-
-
-#ifndef __MOULITEST__
-#include <stdio.h>
-
-int main(void)
-{
-	printf("%s\n", "coucou");
-	return (0);
-}
-#endif
