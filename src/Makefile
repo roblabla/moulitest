@@ -45,7 +45,7 @@ TEST_FILES = $(shell find $(TESTS_PATH) -name "*.spec.c" -type f -follow -print 
 CC_SOURCE = $(TEST_FILES) main.c $(MT_SOURCES_PREFIXED)
 ADD_TESTS = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_SUITE\(mt, \1, suite_\1); /g")
 PROTOTYPES = $(shell echo "$(TEST_FILES)" | perl -pe "s/.*?\/([^\/ ]*)\.spec\.c/MT_ADD_PROTO\(\1\); /g")
-CC_DEFINES = -DPROTOTYPES="$(PROTOTYPES)" -DADD_TESTS="$(ADD_TESTS)" -DRENDU_PATH="\"$(MT_RENDU_PATH)\"" -D__MOULITEST__=1
+CC_DEFINES = -DPROTOTYPES="$(PROTOTYPES)" -DADD_TESTS="$(ADD_TESTS)" -DRENDU_PATH="\"$(MT_RENDU_PATH)\"" -D __MOULITEST__
 
 exec_tests:
 	make -k -C $(FRAMEWORK_PATH)
