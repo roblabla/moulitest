@@ -10,17 +10,18 @@ def get_project_dir():
 	return os.getcwd()
 
 if __name__ == "__main__":
-	config = ConfigParser.ConfigParser()
+	# config = ConfigParser.ConfigParser()
+	config = ConfigParser.SafeConfigParser({'headers': '', 'tests_pattern': '.*\.spec\.c'})
 	config.readfp(open("%s/.moulitest.cfg"%get_project_dir()))
 	headers_dir = config.get('general', 'headers')
 	sources = config.get('general', 'sources')
-	tests = config.get('general', 'tests')
+	tests_pattern = config.get('general', 'tests_pattern')
 
-	cmd = "make -C '{mt_dir}/../src' MT_RENDU_PATH='{project_dir}' MT_HEADERS='{headers_dir}' MT_SOURCES='{sources}' MT_TESTS_GREP_PATTERN='{tests}'".format(
+	cmd = "make -C '{mt_dir}/../src' MT_RENDU_PATH='{project_dir}' MT_HEADERS='{headers_dir}' MT_SOURCES='{sources}' MT_TESTS_GREP_PATTERN='{tests_pattern}'".format(
 		mt_dir= get_mt_dir(),
 		project_dir = get_project_dir(),
 		headers_dir = headers_dir,
 		sources = sources,
-		tests = tests,
+		tests_pattern = tests_pattern,
 	)
 	os.system(cmd)
