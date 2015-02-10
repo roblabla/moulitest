@@ -6,3 +6,4 @@ compiler: gcc
 script:
   - output=$(cd examples/simple_project && ../../src/moulitest) ; echo "$output\n" ; echo "$output" | grep "END OF TESTS"
   - output=$(cd examples/full_project && make -C libft && ../../src/moulitest) ; echo "$output\n" ; echo "$output" | grep "END OF TESTS"
+  - output=$(cd examples/project_with_main && ../../src/moulitest) ; echo "$output\n" ; echo "$output" | grep "END OF TESTS"
