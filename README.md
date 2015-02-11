@@ -1,11 +1,8 @@
 # Moulitest: C Test Framework
 
+Moulitest is a simple C framework to write repeatable tests.
+
 > Si vous cherchez les tests pour **libft / gnl / ft_ls / ft_printf**, c'est par ici: https://github.com/yyang42/moulitest_42projects
-
-## Sommaire
-
-- [Documentation du moulitest](#user-content-moulitest-doc)
-- [Consignes pour l'atelier TDD du mardi 10 fév](#user-content-atelier-tdd)
 
 <a id="moulitest-doc"></a>
 ## Install
@@ -68,34 +65,3 @@ dossier_project/
 	- ft_strlen.spec.c
 	- .moulitest.cfg
 ```
-
-<a id="atelier-tdd"></a>
-## Consignes pour l'atelier TDD du mardi 10 fév
-
-Codez une calculatrice qui prendra en argument une string et qui imprimera le résultat.
-Evidemment vous testerez toutes vos fonctions avec la méthodologie TDD et le framework présenté ci-dessus.
-```
-$ ./ft_calc "6 * 7"  
--> 42
-```
-
-Vous vous mettrez en binôme et coderez à deux sur un même poste.
-
-**Niveau 1:**
-- gérez les opérateurs simple (+, -, *, /, %)  
-
-**Niveau 2:**
-- gérez les parenthèses et la précédence des opérateurs
-
-```
-$ ./ft_calc "6 * (6 + 1)"
--> 42
-```
-**Niveau 3:**
-- gérez les nombres de taille potentiellement infinie (infinit_mult de l'exam mais en mieux !)
-```
-$./ft_calc "42424242424242424242424242424242 * (424242424242424242424242424242 + 424242424242424242424242)"
--> 17998181450872359963269054178108910927276400367309458218549128
-```
-
-Bisous
