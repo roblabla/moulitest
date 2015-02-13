@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
-import ConfigParser
+try:
+	import ConfigParser
+except:
+	import configparser as ConfigParser
 import os
 
 def get_mt_dir():
